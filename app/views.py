@@ -1,8 +1,8 @@
 from flask import render_template
 from app import app
-from .request import get_sources
+from .request import get_sources,get_articles
 
-# Views
+#Views
 @app.route('/')
 def source():
 
@@ -25,8 +25,10 @@ def source():
     return render_template('source.html', title = title,general=general_news,technology=technology_news,sports=sport_news,business=business_news,science=science_news)
 
 @app.route('/')
-def source():
+def article():
     '''
     Returns the article page and its data
     '''
-    return render_template('article.html')
+    article=get_articles
+    title ='Articles'
+    return render_template('article.html',title=title,article = get_articles)
