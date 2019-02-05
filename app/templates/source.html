@@ -11,7 +11,79 @@
 </head>
 
 <body>
-  <h1> Let's catchup</h1>
+  <div class="">
+    <h1> Let's catchup</h1>
+    <div class="general">
+      <h3> General source</h3>
+      <ul>
+        {% for general_news in general %}
+        <li>
+          <p>{{ general_news.name}}</p><br>
+          <p>{{general_news.description}}</p><br>
+          <p><button type="button" name="Read more">{{general_news.url}}</button></p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="business">
+      <!--Business source-->
+      <h3>Business source </h3>
+      <ul>
+        <li>
+        {%for business_news in business%}
+        <p>{{ business_news.name}}</p><br>
+        <p>{{business_news.description}}</p><br>
+        <p><button type="button" name="Read more">{{business_news.url}}</button></p>
+      </li>
+        {%endfor%}
+
+    </div>
+    <div class="technology">
+      <!--Technology source-->
+      <h3>Technology source </h3>
+      <ul>
+        {%for technology_news in technology%}
+        <li>
+        <p>{{ technology_news.name}}</p><br>
+        <p>{{technology_news.description}}</p><br>
+        <p><button type="button" name="Read more">{{technology_news.url}}</button></p>
+      </li>
+        {%endfor%}
+      </ul>
+
+    </div>
+    <div class="sports">
+
+      <!--Sports source-->
+      <h3>Sports source </h3>
+      <ul>
+        {%for sport_news in sports%}
+        <li>
+        <p>{{sport_news.name}}</p><br>
+        <p>{{sport_news.description}}</p><br>
+        <p><button type="button" name="Read more">{{sport_news.url}}</button></p>
+      </li>
+        {%endfor%}
+      </ul>
+    </div>
+    <div class="science">
+      <!--Science source-->
+      <h3>science source </h3>
+      <ul>
+        {%for science_news in science%}
+        <li>
+        <p>{{science_news.name}}</p><br>
+        <p>{{science_news.description}}</p><br>
+        <p><button type="button" name="Read more">{{science_news.url}}</button></p>
+      </li>
+        {%endfor%}
+      </ul>
+    </div>
+
+
+
+
+  </div>
 
 </body>
 
