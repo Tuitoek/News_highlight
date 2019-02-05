@@ -10,81 +10,162 @@
   <title> Home -Let us get to the briefs </title>
   {% endif %}
   {% block styles%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
-{% endblock %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+  {% endblock %}
 </head>
 
 <body>
   {%block content%}
   <div class="container_fluid">
-    <h1> Let's catchup</h1>
+    <h1 align="center"> Let's catchup on news</h1>
+
+    <h3 align='center'> General source</h3>
     <div class="general">
-      <h3> General source</h3>
-      <ul>
-        {% for general_news in general %}
-        <li>
-          <p>{{ general_news.name}}</p><br>
-          <p>{{general_news.description}}</p><br>
-          <p><button type="button" name="Read more">{{general_news.url}}</button></p>
-        </li>
-        {% endfor %}
-      </ul>
+      <div class="container">
+        <div class="row">
+          <ul>
+            {% for general_news in general %}
+            <div class="col-md-4">
+              <li>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <p>{{ general_news.name}}</p>
+                    <div class="panel-body">
+                      <p>{{general_news.description}}</p>
+
+                      <p>
+                        <a target='blank' href='{{general_news.url}}'> <button class="btn btn-basic" type="button" name="Read more"align='center'>Read more</button></a> </p>
+
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+            </div>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
+
+    <h3 align="center">Business source </h3>
     <div class="business">
-      <!--Business source-->
-      <h3>Business source </h3>
-      <ul>
-        <li>
-        {%for business_news in business%}
-        <p>{{ business_news.name}}</p><br>
-        <p>{{business_news.description}}</p><br>
-        <p><button type="button" name="Read more">{{business_news.url}}</button></p>
-      </li>
-        {%endfor%}
+      <div class="container">
+        <div class="row">
+          <ul>
+            {% for business_news in business %}
+            <div class="col-md-4">
+              <li>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <p>{{ business_news.name}}</p>
+                    <div class="panel-body">
+                      <p>{{business_news.description}}</p>
 
+                      <p>
+                        <a target='blank' href='{{business_news.url}}'> <button class="btn btn-basic" type="button" name="Read more" align='center'>Read more</button></a> </p>
+
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+            </div>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
+
+    <h3 align="center">Technology source </h3>
     <div class="technology">
-      <!--Technology source-->
-      <h3>Technology source </h3>
-      <ul>
-        {%for technology_news in technology%}
-        <li>
-        <p>{{ technology_news.name}}</p><br>
-        <p>{{technology_news.description}}</p><br>
-        <p><button type="button" name="Read more">{{technology_news.url}}</button></p>
-      </li>
-        {%endfor%}
-      </ul>
+      <div class="container">
+        <div class="row">
+          <ul>
+            {% for technology_news in technology %}
+            <div class="col-md-4">
+              <li>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <p>{{ technology_news.name}}</p>
+                    <div class="panel-body">
+                      <p>{{technology_news.description}}</p>
 
+                      <p>
+                        <a target='blank' href='{{technology_news.url}}'> <button class="btn btn-basic" type="button" name="Read more" align='center'>Read more</button></a> </p>
+
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+            </div>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
+
+    <h3 align="center">Sports source </h3>
     <div class="sports">
+      <div class="container">
+        <div class="row">
+          <ul>
+            {% for sport_news in sports %}
+            <div class="col-md-4">
+              <li>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <p>{{ sport_news.name}}</p>
+                    <div class="panel-body">
+                      <p>{{sport_news.description}}</p>
 
-      <!--Sports source-->
-      <h3>Sports source </h3>
-      <ul>
-        {%for sport_news in sports%}
-        <li>
-        <p>{{sport_news.name}}</p><br>
-        <p>{{sport_news.description}}</p><br>
-        <p><button type="button" name="Read more">{{sport_news.url}}</button></p>
-      </li>
-        {%endfor%}
-      </ul>
+                      <p>
+                        <a target='blank' href='{{sport_news.url}}'> <button class="btn btn-basic" type="button" name="Read more" align='center'>Read more</button></a> </p>
+
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+            </div>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
+
+    <!--Science source-->
+    <h3 align="center">Science source </h3>
     <div class="science">
-      <!--Science source-->
-      <h3>science source </h3>
-      <ul>
-        {%for science_news in science%}
-        <li>
-        <p>{{science_news.name}}</p><br>
-        <p>{{science_news.description}}</p><br>
-        <p><button type="button" name="Read more">{{science_news.url}}</button></p>
-      </li>
-        {%endfor%}
-      </ul>
+      <div class="container">
+        <div class="row">
+          <ul>
+            {% for science_news in science %}
+            <div class="col-md-4">
+              <li>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <p>{{ science_news.name}}</p>
+                    <div class="panel-body">
+                      <p>{{science_news.description}}</p>
+
+                      <p>
+                        <a target='blank' href='{{science_news.url}}'> <button class="btn btn-basic" type="button" name="Read more" align='center'>Read more</button></a> </p>
+
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+            </div>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
+
 
 
 
