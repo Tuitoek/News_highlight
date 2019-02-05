@@ -6,6 +6,8 @@ from app import app
 def source():
 
     '''
-    View root page function that returns the source page and its data
+    View root page function that returns the index page and its data
     '''
-    return render_template('source.html')
+
+    title = 'Home -Let us get to the briefs'
+    return render_template('source.html', title = title)
